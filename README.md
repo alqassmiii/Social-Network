@@ -145,20 +145,12 @@
 ---
 
 ## 📸 Screenshots
-
-### Landing Page
-![Landing Page](docs/homepage.png)
-*Modern landing page with feature highlights and call-to-action*
-
 ### Authentication
 <div style="display: flex; gap: 10px;">
-
 ![Login](docs/login-page.png)
 *Secure login with JWT authentication*
-
 ![Register](docs/register-page.png)
 *User registration with avatar selection*
-
 </div>
 
 ### Main Application
