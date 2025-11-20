@@ -1,9 +1,7 @@
 # 🌐 Gigabit Social Network
 
 <div align="center">
-
 ![Gigabit Landing Page](docs/homepage.png)
-
 **A next-generation social networking platform built for real-time interaction and community building**
 
 [![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://golang.org/)
