@@ -12,7 +12,7 @@
 [![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-[Features](#-features) • [Tech Stack](#-tech-stack) • [Screenshots](#-screenshots) • [Getting Started](#-getting-started) • [Architecture](#-architecture) • [License](#-license)
+[Overview](#-overview) • [Features](#-features) • [Tech Stack](#-tech-stack) • [Screenshots](#-screenshots) • [Architecture](#-architecture) • [Contact](#-contact)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 **Gigabit** is a full-stack social networking platform that combines the power of **Go** for high-performance backend services with **Next.js** for a responsive, modern frontend. Built with scalability and user experience in mind, Gigabit offers everything users expect from a contemporary social platform: real-time messaging, community groups, event management, and granular privacy controls.
 
-### 🌟 Why Gigabit?
+### 🌟 Key Highlights
 
 - **⚡ Real-Time Performance**: WebSocket-based architecture for instant updates and live interactions
 - **🎨 Modern UX**: Beautiful, responsive interface built with Next.js 15 and Tailwind CSS
@@ -138,7 +138,7 @@
 
 ### DevOps
 
-- **Docker**: Containerization
+- **Docker**: Containerization with multi-stage builds
 - **Docker Compose**: Multi-container orchestration
 - **Health Checks**: Automated service monitoring
 
@@ -174,99 +174,6 @@
 
 ![Events](docs/events-page.png)
 *Event management and RSVP system*
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Go** 1.23 or higher
-- **Node.js** 20+ and npm
-- **Docker** (optional, for containerized deployment)
-
-### Option 1: Local Development
-
-1. **Clone the repository**
-    ```bash
-   git clone https://github.com/yourusername/gigabit-social-network.git
-   cd gigabit-social-network
-   ```
-
-2. **Start the backend**
-   ```bash
-   cd Backend
-   go mod download
-   go run . --mock --clear  # Load mock data for testing
-   ```
-   The backend will start on `http://localhost:8080`
-
-3. **Start the frontend** (in a new terminal)
-   ```bash
-   cd Frontend
-   npm install
-   npm run dev
-   ```
-   The frontend will start on `http://localhost:3000`
-
-4. **Access the application**
-   - Open `http://localhost:3000` in your browser
-   - Use demo credentials:
-     - Email: `john.doe@example.com`
-     - Password: `Aa123456`
-
-### Option 2: Docker Deployment
-
-1. **Build and start services**
-    ```bash
-    ./build.sh
-   ```
-   
-   Or manually:
-   ```bash
-   docker compose build
-   docker compose up -d
-   ```
-
-2. **Access the application**
-   - Frontend: `http://localhost:3000`
-   - Backend API: `http://localhost:8080`
-   - Health Check: `http://localhost:8080/health`
-
-3. **View logs**
-   ```bash
-   docker compose logs -f
-   ```
-
-4. **Stop services**
-   ```bash
-   docker compose down
-   ```
-
-### Using the Run Script
-
-The project includes a unified `run.sh` script for common tasks:
-
-```bash
-# Development
-./run.sh dev          # Start both frontend and backend
-
-# Production
-./run.sh build        # Build production artifacts
-./run.sh start        # Start production servers
-
-# Docker
-./run.sh docker:build    # Build Docker images
-./run.sh docker:up       # Start containers
-./run.sh docker:down     # Stop containers
-./run.sh docker:logs     # View logs
-./run.sh docker:status   # Check container health
-
-# Utilities
-./run.sh test         # Run tests
-./run.sh lint         # Run linters
-./run.sh clean        # Clean build artifacts
-```
 
 ---
 
@@ -367,7 +274,7 @@ Frontend/
 
 ---
 
-## 🔌 API Documentation
+## 🔌 API Endpoints
 
 ### Authentication
 
@@ -429,24 +336,26 @@ Connect to `/ws` for real-time updates:
 
 ## 🔐 Security Features
 
-- **Password Hashing**: bcrypt with salt
+- **Password Hashing**: bcrypt with salt for secure password storage
 - **JWT Tokens**: Secure, stateless authentication
-- **CORS Protection**: Configured for production
-- **SQL Injection Prevention**: Prepared statements
-- **XSS Protection**: Input sanitization
+- **CORS Protection**: Configured for production environments
+- **SQL Injection Prevention**: Prepared statements throughout
+- **XSS Protection**: Input sanitization and validation
 - **Privacy Controls**: Granular permissions for posts and profiles
+- **Session Management**: Secure token handling and refresh
 
 ---
 
 ## 🎨 UI/UX Highlights
 
 - **Responsive Design**: Mobile-first approach with breakpoints for all devices
-- **Dark Theme**: Eye-friendly color scheme throughout
+- **Dark Theme**: Eye-friendly color scheme throughout the application
 - **Smooth Animations**: Framer Motion for delightful interactions
-- **Accessibility**: ARIA labels and keyboard navigation
-- **Loading States**: Skeletons and spinners for better UX
+- **Accessibility**: ARIA labels and keyboard navigation support
+- **Loading States**: Skeleton loaders and spinners for better UX
 - **Error Handling**: User-friendly error messages and retry mechanisms
 - **Toast Notifications**: Non-intrusive feedback for user actions
+- **Optimistic Updates**: Instant UI feedback for user interactions
 
 ---
 
@@ -455,86 +364,85 @@ Connect to `/ws` for real-time updates:
 The application uses SQLite with 50+ migration files covering:
 
 - **Users**: Profiles, authentication, privacy settings
-- **Posts**: Content, privacy, likes, bookmarks
-- **Comments**: Threaded discussions
+- **Posts**: Content, privacy, likes, bookmarks, shares
+- **Comments**: Threaded discussions with nested replies
 - **Messages**: Private and group conversations
-- **Groups**: Communities with memberships
-- **Events**: Event details and RSVPs
-- **Polls**: Poll options and votes
-- **Notifications**: Activity tracking
+- **Groups**: Communities with memberships and roles
+- **Events**: Event details, RSVPs, and attendees
+- **Polls**: Poll options and vote tracking
+- **Notifications**: Activity tracking and alerts
 - **Sessions**: JWT session management
-- **Follows**: User relationships
+- **Follows**: User relationships and friend requests
 
 ---
 
-## 🧪 Testing
+## 💼 Technical Skills Demonstrated
 
-The project includes mock data for easy testing:
+This project showcases proficiency in:
 
-```bash
-# Start backend with mock data
-cd Backend
-go run . --mock --clear
-```
+✅ **Backend Development**
+- Go programming with modern best practices
+- RESTful API design and implementation
+- WebSocket real-time communication
+- Database design and SQL migrations
+- Authentication and authorization
+- Middleware and error handling
 
-This loads:
-- 30+ test users
-- Sample posts with images and polls
-- Group conversations
-- Events and RSVPs
-- Friend connections
-- Messages and notifications
+✅ **Frontend Development**
+- React with TypeScript
+- Next.js 15 App Router
+- Responsive UI design
+- State management with Context API
+- Custom hooks for reusable logic
+- Real-time UI updates
 
-**Demo Credentials:**
-- Email: `john.doe@example.com`
-- Password: `Aa123456`
+✅ **DevOps & Tools**
+- Docker containerization
+- Multi-stage builds for optimization
+- Docker Compose orchestration
+- Health checks and monitoring
+- Git version control
 
-All test users use the same password for convenience.
+✅ **Software Engineering**
+- Clean architecture patterns
+- Service layer separation
+- Code organization and modularity
+- API documentation
+- Security best practices
 
 ---
 
-## 🤝 Contributing
+## 📞 Contact
 
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+> **Interested in seeing a live demo or running this project?**
+> 
+> Please feel free to reach out to me directly. I'd be happy to provide a demonstration, discuss the technical implementation, or walk you through the codebase.
 
-### Development Guidelines
 
-1. Follow the existing code structure
-2. Write clear commit messages
-3. Add tests for new features
-4. Update documentation as needed
-5. Ensure all tests pass before submitting PR
+
+**Contact Information:**
+- **Email**: qassimhassan9@gmail.com
+- **LinkedIn**: [LinkedIn](https://www.linkedin.com/in/qassim-aljaffer)  
+
+
+I'm available for:
+- 🚀 Live demo sessions
+- 💼 Technical interviews
+- 🤝 Collaboration opportunities
+- 📧 Code access requests
 
 ---
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
-
----
-
-## 👨‍💻 Author
-
-**Your Name**
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername)
-
----
-
-## 🙏 Acknowledgments
-
-- Next.js team for the amazing React framework
-- Go community for excellent tooling and libraries
-- Material-UI for beautiful components
-- All open-source contributors whose libraries made this project possible
+This project is proprietary and confidential. All rights reserved.
 
 ---
 
 <div align="center">
 
-**⭐ Star this repo if you find it useful!**
+**⭐ Interested in this project? Let's connect!**
 
-Made with ❤️ and lots of ☕
+*Built with Go, Next.js, TypeScript, and a passion for clean code*
 
 </div>
