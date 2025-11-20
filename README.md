@@ -147,6 +147,8 @@
 
 ### Authentication
 
+![Gigabit Landing Page](docs/homepage.png)
+*landing page
 ![Login](docs/login-page.png)
 *Secure login with JWT authentication*
 
