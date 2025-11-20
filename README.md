@@ -1,10 +1,6 @@
 # 🌐 Gigabit Social Network
 
-<div align="center">
 
-![Gigabit Landing Page](docs/homepage.png)
-
-</div>
 
 ---
 
